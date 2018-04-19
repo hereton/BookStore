@@ -19,14 +19,10 @@ import java.net.URL
 class BookAdapter(
         private var context:Context, private var booksList:List<Book>):BaseAdapter() {
 
-
-
     private class ViewHolder(row: View?){
         var textName = row?.findViewById<TextView>(R.id.name)
         var ivImage = row?.findViewById<ImageView>(R.id.imgView)
         var priceName = row?.findViewById<TextView>(R.id.price)
-
-
     }
 
 
@@ -68,10 +64,8 @@ class BookAdapter(
 //            val d = Drawable.createFromStream(inputStream,"src name") as Drawable
 //            viewHolder.ivImage!!.setImageDrawable(d)
 //        }
-
         return view as View
     }
-
 
 
 }

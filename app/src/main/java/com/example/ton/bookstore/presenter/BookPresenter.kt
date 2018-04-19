@@ -1,9 +1,7 @@
 package com.example.ton.bookstore.presenter
 
-import com.example.ton.bookstore.model.Book
 import com.example.ton.bookstore.model.BookRepository
 import java.util.*
-import kotlin.collections.ArrayList
 
 /**
  * Created by ton on 30/3/18.
@@ -22,9 +20,12 @@ class BookPresenter(private val view:BookView,
         }
     }
 
-    fun refresh(){
-        repository.loadAllBooks()
+    fun filter(text:String){
+        repository.filter(text)
     }
 
+    fun update(){
+        repository.update()
+    }
 
 }

@@ -2,4 +2,6 @@
     <string name="app_name">BookStore</string>
     <string name="sort_by">SORT BY</string>
     <string name="actionbar_spinner">ActionBar Spinner</string>
+    <string name="account">account</string>
+    <string name="spinner">spinner</string>
 </resources>
