@@ -1,5 +1,6 @@
 package com.example.ton.bookstore
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -8,12 +9,10 @@ import com.example.ton.bookstore.presenter.BookPresenter
 import com.example.ton.bookstore.presenter.BookView
 import kotlinx.android.synthetic.main.activity_book.*
 import android.os.StrictMode
+import android.support.v7.app.AlertDialog
 import android.view.Menu
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
+import android.widget.*
 import com.example.ton.bookstore.model.*
 
 class BookActivity : AppCompatActivity(),BookView,AdapterView.OnItemSelectedListener {
@@ -55,6 +54,26 @@ class BookActivity : AppCompatActivity(),BookView,AdapterView.OnItemSelectedList
 //      bookRepo = MockBookRepository()
         bookPresenter = BookPresenter(this, bookRepo)
         bookPresenter.start()
+
+        book_listView.setOnItemClickListener { parent, view, position, id ->
+            val alert = AlertDialog.Builder(this)
+            alert.setTitle("Title")
+            alert.setMessage("Do you want to add " + mainBooksList[position].title + " to cart ?")
+
+            alert.setPositiveButton("Yes", DialogInterface.OnClickListener { _, _ ->
+                println("Yes")
+                    return@OnClickListener
+
+            })
+
+            alert.setNegativeButton("Cancel",
+                    DialogInterface.OnClickListener { _, _ ->
+                        // TODO Auto-generated method stub
+                        return@OnClickListener
+                    })
+            alert.show()
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

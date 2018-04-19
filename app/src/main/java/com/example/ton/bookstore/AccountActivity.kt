@@ -13,7 +13,6 @@ import com.example.ton.bookstore.presenter.BookView
 import kotlinx.android.synthetic.main.activity_account.*
 import android.content.DialogInterface
 import android.support.v7.app.AlertDialog
-import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 
