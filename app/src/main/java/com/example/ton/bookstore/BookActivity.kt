@@ -90,8 +90,6 @@ class BookActivity : AppCompatActivity(),BookView,AdapterView.OnItemSelectedList
             val intent = Intent(this, AccountActivity::class.java)
             startActivity(intent)
         })
-
-
         return true
     }
 
