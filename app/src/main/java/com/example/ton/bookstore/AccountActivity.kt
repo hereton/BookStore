@@ -96,7 +96,6 @@ class AccountActivity : AppCompatActivity(),BookView {
 
             alert.setNegativeButton("Cancel",
                     DialogInterface.OnClickListener { _, _ ->
-                        // TODO Auto-generated method stub
                         return@OnClickListener
                     })
             alert.show()

@@ -53,17 +53,17 @@ class BookAdapter(
         val book = getItem(position) as Book
         viewHolder.textName!!.text =  book.title
         viewHolder.priceName!!.text = book.price.toString()
-//        try{
-//            val inputStream = URL(book.imageUrl).content as InputStream
-//            viewHolder.ivImage!!.setImageDrawable(Drawable.createFromStream(inputStream,"src name"))
-//
-//        }
-//        catch (e : Exception){
-//            println("no image url")
-//            val inputStream = URL("https://support.appsflyer.com/hc/article_attachments/115011109089/android.png").content as InputStream
-//            val d = Drawable.createFromStream(inputStream,"src name") as Drawable
-//            viewHolder.ivImage!!.setImageDrawable(d)
-//        }
+        try{
+            val inputStream = URL(book.imageUrl).content as InputStream
+            viewHolder.ivImage!!.setImageDrawable(Drawable.createFromStream(inputStream,"src name"))
+
+        }
+        catch (e : Exception){
+            println("no image url")
+            val inputStream = URL("https://support.appsflyer.com/hc/article_attachments/115011109089/android.png").content as InputStream
+            val d = Drawable.createFromStream(inputStream,"src name") as Drawable
+            viewHolder.ivImage!!.setImageDrawable(d)
+        }
         return view as View
     }
 
